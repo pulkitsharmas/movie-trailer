@@ -3,7 +3,18 @@ import os
 import re
 
 class Movie():
+    """
+    The base template for each movie
+    """
+    
     def __init__(self, title, poster_image_url, trailer_youtube_url):
+        """
+        Each Movie instance is initialized with
+
+        :param title: title of movie
+        :param poster_image_url: poster of movie
+        :param trailer_youtube_url: trailer of movie
+        """
         self.title = title
         self.poster_image_url = poster_image_url
         self.trailer_youtube_url = trailer_youtube_url
@@ -173,10 +184,15 @@ def open_movies_page(movies):
     url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
 
-nemo = Movie("Finding Nemo", "https://upload.wikimedia.org/wikipedia/en/2/29/Finding_Nemo.jpg", "https://www.youtube.com/watch?v=SPHfeNgogVs")
-cars3 = Movie("Cars 3", "https://upload.wikimedia.org/wikipedia/en/9/94/Cars_3_poster.jpg", "https://www.youtube.com/watch?v=ZuaseSovWDY")
-des = Movie("Despicable me", "https://upload.wikimedia.org/wikipedia/en/d/db/Despicable_Me_Poster.jpg", "https://www.youtube.com/watch?v=zzCZ1W_CUoI")
-bandb = Movie("Beauty And the Beast", "https://upload.wikimedia.org/wikipedia/en/d/d6/Beauty_and_the_Beast_2017_poster.jpg", "https://www.youtube.com/watch?v=OvW_L8sTu5E")
-jungleBook = Movie("The Jungle Book", "https://upload.wikimedia.org/wikipedia/en/a/a4/The_Jungle_Book_%282016%29.jpg", "https://www.youtube.com/watch?v=HcgJRQWxKnw")
+nemo = Movie("Finding Nemo", "https://upload.wikimedia.org/wikipedia/en/2/29/Finding_Nemo.jpg", 
+             "https://www.youtube.com/watch?v=SPHfeNgogVs")
+cars3 = Movie("Cars 3", "https://upload.wikimedia.org/wikipedia/en/9/94/Cars_3_poster.jpg",  # noqa
+              "https://www.youtube.com/watch?v=ZuaseSovWDY")
+des = Movie("Despicable me", "https://upload.wikimedia.org/wikipedia/en/d/db/Despicable_Me_Poster.jpg",  # noqa
+            "https://www.youtube.com/watch?v=zzCZ1W_CUoI")
+bandb = Movie("Beauty And the Beast", "https://upload.wikimedia.org/wikipedia/en/d/d6/Beauty_and_the_Beast_2017_poster.jpg",  #noqa
+              "https://www.youtube.com/watch?v=OvW_L8sTu5E")
+jungleBook = Movie("The Jungle Book", "https://upload.wikimedia.org/wikipedia/en/a/a4/The_Jungle_Book_%282016%29.jpg",  # noqa
+                   "https://www.youtube.com/watch?v=HcgJRQWxKnw")
 movieList = [nemo,cars3,des,bandb,jungleBook]
 open_movies_page(movieList)
